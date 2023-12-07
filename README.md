@@ -1,2 +1,2 @@
 # .config
-jake's .files
+jake's dot files
