@@ -3,6 +3,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Spaceship prompt
 SPACESHIP_PROMPT_ASYNC=true #fixes double prompt in warp
 SPACESHIP_PROMPT_ADD_NEWLINE=false
@@ -82,7 +84,7 @@ zstyle ':omz:update' frequency 14
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
