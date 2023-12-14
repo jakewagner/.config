@@ -121,7 +121,6 @@ require('lazy').setup({
         map('n', '<leader>hS', gs.stage_buffer, { desc = 'git Stage buffer' })
         map('n', '<leader>hu', gs.undo_stage_hunk, { desc = 'undo stage hunk' })
         map('n', '<leader>hR', gs.reset_buffer, { desc = 'git Reset buffer' })
-        map('n', '<leader>hp', gs.preview_hunk, { desc = 'preview git hunk' })
         map('n', '<leader>hb', function()
           gs.blame_line { full = false }
         end, { desc = 'git blame line' })
@@ -208,7 +207,8 @@ require('lazy').setup({
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   -- { import = 'custom.plugins' },
-  { "elentok/format-on-save.nvim" },
+  "elentok/format-on-save.nvim" ,
+  'ThePrimeagen/harpoon',
 }, {})
 
 -- [[ Highlight on yank ]]
@@ -273,6 +273,12 @@ local function live_grep_git_root()
 end
 
 vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
+
+-- Harpoon
+vim.keymap.set('n', '<leader>hm', require("harpoon.mark").add_file, { desc = '[h]arpoon [m]ark file' })
+vim.keymap.set('n', '<leader>hp', require("harpoon.ui").toggle_quick_menu, { desc = '[h]arpoon [p]ick marked file' })
+vim.keymap.set('n', '<leader>hc', require("harpoon.mark").clear_all, { desc = '[h]arpoon [c]lear marked files' })
+
 
 -- See `:help telescope.builtin`
 require('telescope').setup{ 
