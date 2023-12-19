@@ -11,6 +11,7 @@ spaceship
 tmux
 alacritty
 ripgrep
+deno
 
 link zshrc
 ln -s ~/.dotiles/.zshrc ~/.zshrc
