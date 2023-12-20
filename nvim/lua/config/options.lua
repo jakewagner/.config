@@ -1,11 +1,17 @@
 -- column numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.o.statuscolumn = "%s %l %r "
+vim.o.statuscolumn = "%s%{printf('%i', v:lnum) }%=%{% foldlevel(v:lnum) ? '%C' : ' ' %} "
 
 -- theme
-vim.o.background = "dark" 
+vim.o.background = "dark"
+require("gruvbox").setup({
+  overrides = {
+    CursorLine = { bg = "#3c3836" }
+  }
+})
 vim.cmd("colorscheme gruvbox")
+vim.cmd("hi SignColumn guibg=none")
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -28,6 +34,9 @@ vim.o.smartcase = true
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
+
+-- Enable CursorLine highlight
+vim.o.cul = true
 
 -- Decrease update time
 vim.o.updatetime = 250
