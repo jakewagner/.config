@@ -9,4 +9,6 @@ const someFunctinon = () => {
   })
 }
 
+someFunctinon()
+
 console.log(test())

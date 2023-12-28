@@ -39,11 +39,13 @@ format_on_save.setup({
 
     -- Add custom formatter
     filetype1 = formatters.remove_trailing_whitespace,
-    filetype2 = formatters.custom({ format = function(lines)
-      return vim.tbl_map(function(line)
-        return line:gsub("true", "false")
-      end, lines)
-    end}),
+    filetype2 = formatters.custom({
+      format = function(lines)
+        return vim.tbl_map(function(line)
+          return line:gsub("true", "false")
+        end, lines)
+      end
+    }),
 
     -- Concatenate formatters
     python = {
@@ -88,14 +90,13 @@ format_on_save.setup({
   },
 
   -- Optional: fallback formatter to use when no formatters match the current filetype
-  fallback_formatter = {
-    formatters.remove_trailing_whitespace,
-    formatters.remove_trailing_newlines,
-    formatters.prettierd,
-  },
+  --  fallback_formatter = {
+  --    formatters.remove_trailing_whitespace,
+  --    formatters.remove_trailing_newlines,
+  --    formatters.prettierd,
+  --  },
 
   -- By default, all shell commands are prefixed with "sh -c" (see PR #3)
   -- To prevent that set `run_with_sh` to `false`.
   run_with_sh = false,
 })
-

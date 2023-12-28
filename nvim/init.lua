@@ -22,7 +22,27 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
-  { "ellisonleao/gruvbox.nvim", priority = 1000,  config = true, opts = {} },
+  { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = {} },
+
+  -- tmux navigator
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>",  "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>",  "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>",  "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>",  "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -163,7 +183,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim',      opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -207,7 +227,7 @@ require('lazy').setup({
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   -- { import = 'custom.plugins' },
-  "elentok/format-on-save.nvim" ,
+  "elentok/format-on-save.nvim",
   'ThePrimeagen/harpoon',
 }, {})
 
@@ -281,15 +301,15 @@ vim.keymap.set('n', '<leader>hc', require("harpoon.mark").clear_all, { desc = '[
 
 
 -- See `:help telescope.builtin`
-require('telescope').setup{ 
-  defaults = { 
-    file_ignore_patterns = { 
-      "node_modules" 
+require('telescope').setup {
+  defaults = {
+    file_ignore_patterns = {
+      "node_modules"
     }
   }
 }
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').find_files, { desc = '[ ] Search files'} )
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').find_files, { desc = '[ ] Search files' })
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
