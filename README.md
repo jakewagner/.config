@@ -11,7 +11,8 @@ spaceship
 tmux
 alacritty
 ripgrep
-deno
+koekeishiya/formulae/yabai
+koekeishiya/formulae/skhd
 
 link zshrc
 ln -s ~/.dotiles/.zshrc ~/.zshrc
