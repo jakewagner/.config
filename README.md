@@ -14,6 +14,7 @@ ripgrep
 koekeishiya/formulae/yabai
 koekeishiya/formulae/skhd
 zsh-syntax-highlighting
+FelixKratz/formulae/borders
 
 link zshrc
 ln -s ~/.dotiles/.zshrc ~/.zshrc
