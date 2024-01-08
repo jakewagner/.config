@@ -13,6 +13,7 @@ alacritty
 ripgrep
 koekeishiya/formulae/yabai
 koekeishiya/formulae/skhd
+zsh-syntax-highlighting
 
 link zshrc
 ln -s ~/.dotiles/.zshrc ~/.zshrc
