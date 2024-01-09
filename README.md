@@ -25,7 +25,7 @@ https://unpkg.com/browse/alacritty-themes@4.1.5/
 download hack font from
 https://www.nerdfonts.com/font-downloads
 
-plact the folloing in the ~/.zshrc file to point to dotfiles one
+place the following in the ~/.zshrc file to point to dotfiles one
 
 source $HOME/.config/.zshrc
 export ZSH="$HOME/.oh-my-zsh"
