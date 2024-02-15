@@ -130,3 +130,5 @@ alt - p : yabai -m window --toggle sticky --toggle pip
 # rotate 90 degrees 
 alt - r : yabai -m space --rotate 90
 
+# focus alacritty
+shift + alt - a : yabai -m window --focus "$(yabai -m query --windows | jq 'map(select(.app == "Alacritty")) | .[0].id')"

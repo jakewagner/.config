@@ -29,6 +29,8 @@ yabai -m config \
   mouse_action2 resize \
   mouse_drop_action swap
 
+yabai -m rule --add app!="^(Finder|Notes|Alacrity)$" manage=off 
+
 borders active_color=0xffb16286 width=12.0 &
 
 echo "yabai configuration loaded.."
