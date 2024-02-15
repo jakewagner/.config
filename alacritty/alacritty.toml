@@ -44,7 +44,7 @@ family = "Hack Nerd Font"
 style = "Regular"
 
 [mouse]
-hide_when_typing = true
+hide_when_typing = false 
 
 [window]
 decorations = "buttonless"
